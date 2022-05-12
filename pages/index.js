@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "./components/navbar";
 
 import { FiChevronRight } from "react-icons/fi";
@@ -55,7 +56,7 @@ export default function Home() {
                 seeking a career as a Front-End Developer.
               </p>
               <div className="tech-container">
-                <h3 className="section-header">
+                <h3 className="section-subheader">
                   Technologies I've Recently Used
                 </h3>
                 <div className="tech-grid">
@@ -87,6 +88,18 @@ export default function Home() {
               </div>
             </div>
             <img src="/images/profile.jpeg" className="profile-img"></img>
+          </div>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="container">
+          <h3 className="section-header">Projects</h3>
+          <div className="project-card">
+            <p className="highlight">Featured Project</p>
+            <Link href="https://www.lossize.com">
+              <h3 className="project-title cursor-pointer">Lossize.com</h3>
+            </Link>
           </div>
         </div>
       </div>

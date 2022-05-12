@@ -117,12 +117,27 @@ button {
 
 .section {
   margin: 0 3rem;
+  margin-bottom: 5rem;
   color: var(--textColor2);
 }
 
 .section-header {
   color: var(--accentColor);
   margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.section-subheader {
+  color: var(--accentColor);
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  color: var(--accentColor);
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 /* Other Classes */
@@ -232,6 +247,13 @@ footer {
 
 .tech-icon {
   color: var(--accentColor);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: rgb(15, 25, 39);
 }
 
 /* For larger then mobile */
