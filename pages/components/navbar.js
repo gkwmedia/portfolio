@@ -7,9 +7,21 @@ const Navbar = () => {
         <div className="nav-left"></div>
         <div className="nav-right">
           <ul>
-            <li className="nav-item">About</li>
-            <li className="nav-item">Projects</li>
-            <li className="nav-item">Contact</li>
+            <li>
+              <a className="nav-item" href="#about-section">
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-item" href="#about-section">
+                Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-item" href="#about-section">
+                Contact
+              </a>
+            </li>
             <li>
               <button className="nav-btn">Resume</button>
             </li>

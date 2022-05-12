@@ -43,6 +43,10 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
@@ -97,10 +101,31 @@ button {
   }
 }
 
+/* Utility Classes */
 .container {
   max-width: 1150px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.section {
+  margin: 0 3rem;
+  color: var(--textColor2);
+}
+
+.section-header {
+  color: var(--accentColor);
+  margin-bottom: 0.5rem;
+}
+
+/* Other Classes */
 
 .navbar {
   height: 60px;
@@ -125,7 +150,9 @@ button {
 }
 
 .nav-item {
+  text-decoration: none;
   cursor: pointer;
+  color: white;
 }
 
 .nav-item:hover {
@@ -137,6 +164,7 @@ button {
   padding: 0.25rem 0.25rem;
   border-radius: 0.5rem;
   color: var(--accentColor);
+  transition: all 200ms ease-in-out;
 }
 
 .nav-btn:hover {
@@ -167,11 +195,54 @@ footer {
   color: var(--textColor2Highlight);
 }
 
-.section {
-  margin: 0 5rem;
-  color: var(--textColor2);
+.contact-btn {
+  border: solid 2px var(--accentColor);
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--accentColor);
+  margin: 0.5rem 0;
+  background-color: none;
+  transition: all 200ms ease-in-out;
 }
 
-.section-header {
+.contact-btn:hover {
+  background-color: rgba(100, 223, 180, 25%);
+}
+
+.profile-img {
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}
+
+.tech-container {
+  margin-top: 1rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--textColor2Highlight);
+}
+
+.tech-icon {
   color: var(--accentColor);
+}
+
+/* For larger then mobile */
+@media (min-width: 640px) {
+  .text-img {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .profile-img {
+    max-width: 24rem;
+  }
 }
