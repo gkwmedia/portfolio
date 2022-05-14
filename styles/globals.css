@@ -151,6 +151,10 @@ button {
 .mt-2 {
   margin-top: 0.5rem;
 }
+
+.relative {
+  position: relative;
+}
 /* Other Classes */
 
 .navbar {
@@ -231,6 +235,11 @@ footer {
   transition: all 200ms ease-in-out;
 }
 
+#hero-contact-btn {
+  text-decoration: none;
+  color: inherit;
+}
+
 .contact-btn:hover {
   background-color: rgba(100, 223, 180, 25%);
 }
@@ -265,13 +274,46 @@ footer {
   color: var(--accentColor);
 }
 
+.project-container {
+  position: relative;
+  margin: 4rem 0;
+  padding-right: 2rem;
+}
+
+.project-img-container {
+  border-radius: 0.5rem;
+  transition: all 250ms ease-in-out;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accentColor);
+  opacity: 55%;
+}
+
 .project-card {
+  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   padding: 2rem;
   background-color: rgb(15, 25, 39);
-  margin: 1rem 0;
+  opacity: 0.99;
+}
+
+.card-right {
+  left: 2rem;
+  top: 4rem;
+}
+
+.card-left {
+  left: -2rem;
+  right: 4rem;
+  top: 4rem;
 }
 
 .project-title {
@@ -295,6 +337,27 @@ footer {
   cursor: pointer;
 }
 
+.contact-form {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: var(--accentColor);
+}
+
+.contact-form > input,
+textarea {
+  background-color: rgb(246, 246, 246);
+  border-radius: 0.5rem;
+  padding-inline: 0.25rem;
+}
+
 /* For larger then mobile */
 @media (min-width: 640px) {
   .text-img {
@@ -305,5 +368,32 @@ footer {
 
   .profile-img {
     max-width: 24rem;
+  }
+}
+
+@-webkit-keyframes move {
+  0% {
+    z-index: 1;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    z-index: -1;
+    opacity: 1;
+  }
+}
+@keyframes move {
+  0% {
+    z-index: 1;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    z-index: -1;
+    opacity: 1;
   }
 }
