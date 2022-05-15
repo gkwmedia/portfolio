@@ -2,7 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./components/navbar";
-import { useState } from "react";
+import AnimatedDiv from "./components/animated_div";
+import { useState, useEffect } from "react";
+
+import { Typewriter, useTypewriter, Cursor } from "react-simple-typewriter";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import { FiChevronRight } from "react-icons/fi";
 import { FaExternalLinkAlt, FaUsersSlash } from "react-icons/fa";
@@ -10,6 +15,25 @@ import { FaGithub } from "react-icons/fa";
 
 export default function Home() {
   const iconSize = 25;
+  //hero section animation staes
+  const [showName, setShowName] = useState(false);
+  const [showParagraph, setShowParagraph] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  //section animation states
+  const sectionVariants = {
+    visible: { opacity: 1, y: 0, transition: { duration: 0.75 } },
+    hidden: { opacity: 0, y: 100 },
+  };
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  //form states
   const [email, setEmail] = useState(null);
   const [name, setName] = useState(null);
   const [message, setMessage] = useState(null);
@@ -33,7 +57,6 @@ export default function Home() {
       },
       body: JSON.stringify({ name, email, message }),
     });
-    console.log(response);
   };
 
   return (
@@ -51,26 +74,61 @@ export default function Home() {
 
       <div className="hero">
         <div className="container">
-          <h2 className="hero-introduction">Hi, my Name is</h2>
-          <h1 className="name-header">Thomas Gusewelle</h1>
-          <p>
-            I'm a developer focusing on creating beautiful and engaging
-            experiences on the web and mobile. Currently I'm a Director of Media
-            and looking for a development focused role.
-          </p>
-          <button className="contact-btn">
-            <a id="hero-contact-btn" href="#contact-section">
-              Contact Me
-            </a>
-          </button>
+          <h2 className="hero-introduction">
+            <span>
+              <Typewriter
+                words={["Hi, my Name is"]}
+                // cursor={cursor}
+                // cursorStyle="_"
+                typeSpeed={70}
+                onLoopDone={() => setShowName(true)}
+              />
+            </span>
+          </h2>
+          {showName && (
+            <h1 className="name-header">
+              <span>
+                <Typewriter
+                  words={["Thomas Gusewelle"]}
+                  onLoopDone={() => setShowParagraph(true)}
+                />
+              </span>
+            </h1>
+          )}
+          {showParagraph && (
+            <p className="w-prose">
+              <span>
+                <Typewriter
+                  words={[
+                    "I'm a developer focusing on creating beautiful and engaging experiences on the web and mobile. Currently I'm a Director of Media and looking for a development focused role.",
+                  ]}
+                  typeSpeed={20}
+                  cursor
+                  cursorStyle="_"
+                  onLoopDone={() => setShowButton(true)}
+                />
+              </span>
+            </p>
+          )}
+          {showButton && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1 } }}
+            >
+              <button className="contact-btn">
+                <a id="hero-contact-btn" href="#contact-section">
+                  Contact Me
+                </a>
+              </button>
+            </motion.div>
+          )}
         </div>
       </div>
-
-      <div className="section" id="about-section">
+      <AnimatedDiv classname={"section"} id={"about-section"}>
         <div className="container">
+          <h3 className="section-header">About Me</h3>
           <div className="text-img">
             <div>
-              <h3 className="section-header">About Me</h3>
               <p>
                 Hi! My name is Thomas and I have a passion for creating
                 beautiful front-ends that engage users in intuative ways. My
@@ -124,13 +182,15 @@ export default function Home() {
             <img src="/images/profile.jpeg" className="profile-img"></img>
           </div>
         </div>
-      </div>
+      </AnimatedDiv>
 
       <div className="section" id="project-section">
         <div className="container">
-          <h3 className="section-header">Projects</h3>
+          <AnimatedDiv>
+            <h3 className="section-header">Projects</h3>
+          </AnimatedDiv>
 
-          <div className="project-container">
+          <AnimatedDiv classname={"project-container"}>
             <div className="project-img-container relative">
               <Image
                 className="relative"
@@ -189,9 +249,9 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
+          </AnimatedDiv>
 
-          <div className="project-container">
+          <AnimatedDiv classname={"project-container"}>
             <div className="project-img-container relative">
               <Image
                 className="relative"
@@ -247,11 +307,62 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
+          </AnimatedDiv>
+
+          <AnimatedDiv classname={"project-container"}>
+            <div className="project-img-container relative">
+              <Image
+                className="relative"
+                src={"/images/lossize.png"}
+                width={600}
+                height={800}
+                layout={"responsive"}
+              />
+              <div className="img-overlay"></div>
+            </div>
+            <div className="project-card card-right">
+              <p className="highlight">Featured Project</p>
+              <Link href="https://www.thomasgusewelle.com">
+                <h3 className="project-title cursor-pointer">
+                  ThomasGusewelle.com
+                </h3>
+              </Link>
+              <p className="text-white">
+                A website designed to introduce myself and showcase some of the
+                work I have done.
+              </p>
+              <div className="tech-container">
+                <p className="highlight mb-1">Technologies Used</p>
+                <div className="tech-grid-2">
+                  <div className="tech-item">
+                    <FiChevronRight className="tech-icon" />
+                    <p>NextJS</p>
+                  </div>
+                  <div className="tech-item">
+                    <FiChevronRight className="tech-icon" />
+                    <p>Nodemailer</p>
+                  </div>
+                  <div className="tech-item">
+                    <FiChevronRight className="tech-icon" />
+                    <p>Vercel</p>
+                  </div>
+                  <div className="tech-item">
+                    <FiChevronRight className="tech-icon" />
+                    <p>Framer Motion</p>
+                  </div>
+                </div>
+              </div>
+              <div className="icons-container">
+                <Link href={"https://github.com/gkwmedia/wieght-tracking"}>
+                  <FaGithub size={iconSize} className="icon" />
+                </Link>
+              </div>
+            </div>
+          </AnimatedDiv>
         </div>
       </div>
 
-      <div className="section" id="contact-section">
+      <AnimatedDiv classname={"section"} id={"contact-section"}>
         <div className="container">
           <h3 className="section-header">Contact Me</h3>
           <form className="contact-form" onSubmit={handleSubmitForm}>
@@ -285,7 +396,7 @@ export default function Home() {
             </button>
           </form>
         </div>
-      </div>
+      </AnimatedDiv>
 
       <footer></footer>
     </div>

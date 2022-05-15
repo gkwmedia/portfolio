@@ -125,6 +125,7 @@ button {
   color: var(--accentColor);
   margin-bottom: 0.5rem;
   font-size: 1.8rem;
+  text-align: center;
 }
 
 .section-subheader {
@@ -154,6 +155,10 @@ button {
 
 .relative {
   position: relative;
+}
+
+.w-prose {
+  max-width: 65ch;
 }
 /* Other Classes */
 
@@ -219,10 +224,12 @@ footer {
 
 .hero-introduction {
   color: var(--accentColor);
+  font-size: 1.6rem;
 }
 
 .name-header {
   color: var(--textColor2Highlight);
+  font-size: 2.2rem;
 }
 
 .contact-btn {
@@ -276,13 +283,15 @@ footer {
 
 .project-container {
   position: relative;
-  margin: 4rem 0;
+  margin: 5rem 0;
   padding-right: 2rem;
 }
 
 .project-img-container {
   border-radius: 0.5rem;
   transition: all 250ms ease-in-out;
+  max-height: 500px;
+  overflow: hidden;
 }
 
 .img-overlay {
@@ -291,7 +300,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--accentColor);
+  /* background-color: var(--accentColor); */
   opacity: 55%;
 }
 
@@ -360,6 +369,21 @@ textarea {
 
 /* For larger then mobile */
 @media (min-width: 640px) {
+  .hero-introduction {
+    font-size: 2.5rem;
+  }
+
+  .name-header {
+    font-size: 3.5rem;
+  }
+  .contact-btn {
+    margin: 1rem 0;
+  }
+
+  .section-header {
+    font-size: 3rem;
+  }
+
   .text-img {
     display: flex;
     gap: 1rem;
@@ -368,6 +392,30 @@ textarea {
 
   .profile-img {
     max-width: 24rem;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 4rem 0;
+  }
+
+  .project-img-container {
+    overflow: hidden;
+  }
+
+  .project-card {
+    position: static;
+  }
+  .img-overlay {
+    opacity: 0;
+  }
+
+  .card-left {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
   }
 }
 
