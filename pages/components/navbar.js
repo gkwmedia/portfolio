@@ -13,9 +13,9 @@ const Navbar = () => {
         <div className="navbar-container">
           <div className="nav-left"></div>
           <div
-            className={` ${
+            className={`nav-right ${
               showMobileNav ? "translate-x-0" : "translate-x-full"
-            } nav-right`}
+            }`}
           >
             <div className="align-left"></div>
             <ul>
