@@ -1,12 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap");
 
 :root {
+  --primaryColor: rgb(255, 255, 255);
+  --textPrimaryColor: white;
+  --accentColor: #1f3c62;
+  --textColor: #ffffff;
+  --textColor2: rgb(0, 0, 0);
+  --textColor2Highlight: rgb(0, 0, 0);
+  --textWhite: white;
+
+  --bg-color-2: #f2f2f2;
+  /* 
   --primaryColor: rgb(21, 34, 52);
   --textPrimaryColor: white;
-  --accentColor: rgb(100, 223, 180);
+  --accentColor:#0099ff;
   --textColor: #575ba9;
   --textColor2: rgb(77, 105, 122);
-  --textColor2Highlight: rgb(92, 137, 163);
+  --textColor2Highlight: rgb(92, 137, 163); */
 
   font-family: "Source Code Pro", monospace;
 }
@@ -45,6 +55,7 @@ html:focus-within {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Set core body defaults */
@@ -53,6 +64,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--primaryColor);
+  overflow-x: hidden;
 }
 
 /* A elements that don't have a class get default styles */
@@ -115,16 +127,21 @@ button {
   flex-direction: column;
 }
 
+.align-left {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .section {
-  margin: 0 3rem;
-  margin-bottom: 5rem;
+  padding: 2rem 2rem;
   color: var(--textColor2);
+  width: 100%;
 }
 
 .section-header {
   color: var(--accentColor);
-  margin-bottom: 0.5rem;
-  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -145,12 +162,36 @@ button {
   color: white;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.translate-x-full {
+  transform: translateX(100%);
+}
+
+.translate-x-0 {
+  transform: translateX(0px);
 }
 
 .relative {
@@ -160,15 +201,46 @@ button {
 .w-prose {
   max-width: 65ch;
 }
+
+.accent-bg {
+  background-color: var(--accentColor);
+  color: var(--textWhite);
+}
+
+.accent-bg > .container > .section-header {
+  color: var(--textWhite) !important;
+}
+
+.accent-bg-2 {
+  background-color: var(--bg-color-2);
+}
+
 /* Other Classes */
 
 .navbar {
-  height: 60px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  height: 4rem;
+  display: flex;
   align-items: center;
-  padding: 0 1rem;
-  color: var(--textPrimaryColor);
+  box-shadow: 0px 0px 3px #000;
+  color: #000;
+}
+
+.hamburger-icon {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.hamburger-icon:hover {
+  color: var(--accentColor);
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  color: var(--accentColor);
 }
 
 .nav-left {
@@ -177,17 +249,29 @@ button {
   background-color: red;
 }
 
+.nav-right {
+  position: absolute;
+  top: 4rem;
+  width: 100vw;
+  padding: 1rem;
+  background-color: white;
+  height: 100vh;
+  z-index: 1000;
+  transition: all 200ms ease-in-out;
+}
+
 .nav-right > ul {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
 .nav-item {
   text-decoration: none;
   cursor: pointer;
-  color: white;
+  color: black;
 }
 
 .nav-item:hover {
@@ -195,15 +279,16 @@ button {
 }
 
 .nav-btn {
-  border: solid 4px var(--accentColor);
-  padding: 0.25rem 0.25rem;
+  border: solid 2px var(--accentColor);
+  padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
   color: var(--accentColor);
   transition: all 200ms ease-in-out;
 }
 
 .nav-btn:hover {
-  background-color: rgba(100, 223, 180, 15%);
+  color: white;
+  background-color: var(--accentColor);
 }
 
 footer {
@@ -213,13 +298,15 @@ footer {
 }
 
 .hero {
+  font-family: "Source Code Pro", monospace;
   max-height: calc(100% - 60px);
   min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5rem;
+  padding: 0 5rem 0 1rem;
   color: var(--textColor2);
+  overflow: hidden;
 }
 
 .hero-introduction {
@@ -242,13 +329,38 @@ footer {
   transition: all 200ms ease-in-out;
 }
 
+.contact-btn:hover {
+  color: white;
+  background-color: var(--accentColor);
+}
+
 #hero-contact-btn {
   text-decoration: none;
   color: inherit;
 }
 
-.contact-btn:hover {
-  background-color: rgba(100, 223, 180, 25%);
+.svg1 {
+  /* display: none; */
+  color: var(--bg-color-2);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(-90deg) translate(0, -100%);
+  transform-origin: right 0;
+  min-height: 200px;
+  z-index: 0;
+}
+
+.svg2 {
+  color: var(--accentColor);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(-90deg) translate(0, -100%);
+  transform-origin: right 0;
+  /* min-width: 200px; */
+  min-height: 200px;
+  z-index: 0;
 }
 
 .profile-img {
@@ -281,37 +393,38 @@ footer {
   color: var(--accentColor);
 }
 
-.project-container {
+.technologies-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--bg-color-2);
+}
+
+.technology-icon {
+  justify-self: center;
+  color: #000;
+  transition: all 100ms ease-in-out;
+}
+
+.technology-icon:hover {
+  color: var(--accentColor);
+}
+
+.project-container:not(:last-child) {
   position: relative;
-  margin: 5rem 0;
-  padding-right: 2rem;
-}
-
-.project-img-container {
-  border-radius: 0.5rem;
-  transition: all 250ms ease-in-out;
-  max-height: 500px;
-  overflow: hidden;
-}
-
-.img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* background-color: var(--accentColor); */
-  opacity: 55%;
+  margin-bottom: 4rem;
 }
 
 .project-card {
-  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   padding: 2rem;
-  background-color: rgb(15, 25, 39);
-  opacity: 0.99;
+  background-color: var(--bg-color-2);
+  border-radius: 0.5rem;
 }
 
 .card-right {
@@ -327,7 +440,7 @@ footer {
 
 .project-title {
   font-size: 1.8rem;
-  width: min-content;
+  /* width: min-content; */
   transition: color 200ms ease-in-out;
 }
 
@@ -362,7 +475,6 @@ footer {
 
 .contact-form > input,
 textarea {
-  background-color: rgb(246, 246, 246);
   border-radius: 0.5rem;
   padding-inline: 0.25rem;
 }
@@ -392,6 +504,14 @@ textarea {
 
   .profile-img {
     max-width: 24rem;
+  }
+
+  .technologies-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0.5rem;
   }
 
   .project-container {

@@ -12,6 +12,7 @@ import { useInView } from "react-intersection-observer";
 import { FiChevronRight } from "react-icons/fi";
 import { FaExternalLinkAlt, FaUsersSlash } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import TechnologiesSlider from "./components/technologies";
 
 export default function Home() {
   const iconSize = 25;
@@ -19,19 +20,6 @@ export default function Home() {
   const [showName, setShowName] = useState(false);
   const [showParagraph, setShowParagraph] = useState(false);
   const [showButton, setShowButton] = useState(false);
-
-  //section animation states
-  const sectionVariants = {
-    visible: { opacity: 1, y: 0, transition: { duration: 0.75 } },
-    hidden: { opacity: 0, y: 100 },
-  };
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   //form states
   const [email, setEmail] = useState(null);
@@ -67,65 +55,94 @@ export default function Home() {
           name="description"
           content="Thomas Gusewelle's Developer Portfolio"
         />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Navbar />
 
-      <div className="hero">
-        <div className="container">
-          <h2 className="hero-introduction">
-            <span>
-              <Typewriter
-                words={["Hi, my Name is"]}
-                // cursor={cursor}
-                // cursorStyle="_"
-                typeSpeed={70}
-                onLoopDone={() => setShowName(true)}
-              />
-            </span>
-          </h2>
-          {showName && (
-            <h1 className="name-header">
-              <span>
-                <Typewriter
-                  words={["Thomas Gusewelle"]}
-                  onLoopDone={() => setShowParagraph(true)}
-                />
-              </span>
-            </h1>
-          )}
-          {showParagraph && (
-            <p className="w-prose">
-              <span>
-                <Typewriter
-                  words={[
-                    "I'm a developer focusing on creating beautiful and engaging experiences on the web and mobile. Currently I'm a Director of Media and looking for a development focused role.",
-                  ]}
-                  typeSpeed={20}
-                  cursor
-                  cursorStyle="_"
-                  onLoopDone={() => setShowButton(true)}
-                />
-              </span>
-            </p>
-          )}
-          {showButton && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 1 } }}
-            >
-              <button className="contact-btn">
-                <a id="hero-contact-btn" href="#contact-section">
-                  Contact Me
-                </a>
-              </button>
-            </motion.div>
-          )}
+      <div className="hero relative">
+        <div className="z-10">
+          <div className="container">
+            <div className="z-10">
+              <h2 className="hero-introduction">
+                <span>
+                  <Typewriter
+                    words={["Hi, my Name is"]}
+                    // cursor={cursor}
+                    // cursorStyle="_"
+                    typeSpeed={70}
+                    onLoopDone={() => setShowName(true)}
+                  />
+                </span>
+              </h2>
+              {showName && (
+                <h1 className="name-header">
+                  <span>
+                    <Typewriter
+                      words={["Thomas Gusewelle"]}
+                      onLoopDone={() => setShowParagraph(true)}
+                    />
+                  </span>
+                </h1>
+              )}
+              {showParagraph && (
+                <p className="w-prose">
+                  <span>
+                    <Typewriter
+                      words={[
+                        "I'm a developer focusing on creating beautiful and engaging experiences on the web and mobile. Currently I'm a Director of Media and looking for a development focused role.",
+                      ]}
+                      typeSpeed={20}
+                      cursor
+                      cursorStyle="_"
+                      onLoopDone={() => setShowButton(true)}
+                    />
+                  </span>
+                </p>
+              )}
+              {showButton && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 1 } }}
+                >
+                  <button className="contact-btn">
+                    <a id="hero-contact-btn" href="#contact-section">
+                      Contact Me
+                    </a>
+                  </button>
+                </motion.div>
+              )}
+            </div>
+          </div>
         </div>
+        <svg
+          className="svg1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="currentColor"
+            d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+        <svg
+          className="svg2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="currentColor"
+            d="M0,192L48,208C96,224,192,256,288,256C384,256,480,224,576,224C672,224,768,256,864,266.7C960,277,1056,267,1152,229.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
       </div>
-      <AnimatedDiv classname={"section"} id={"about-section"}>
-        <div className="container">
+
+      <div className="section accent-bg" id={"about-section"}>
+        <AnimatedDiv classname="container">
           <h3 className="section-header">About Me</h3>
           <div className="text-img">
             <div>
@@ -137,7 +154,9 @@ export default function Home() {
                 robot(if only it was that easy) and grew into programming and
                 tinkering with different linux operating systems.
               </p>
+
               <br />
+
               <p>
                 From there my life took a different path, earning a Bachelors
                 and Masters Degree in Music Performance from Louisiana State
@@ -147,7 +166,8 @@ export default function Home() {
                 study software developent at the masters level while also
                 seeking a career as a Front-End Developer.
               </p>
-              <div className="tech-container">
+
+              {/* <div className="tech-container">
                 <h3 className="section-subheader">
                   Technologies I've Recently Used
                 </h3>
@@ -177,12 +197,14 @@ export default function Home() {
                     <p>Webflow</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <img src="/images/profile.jpeg" className="profile-img"></img>
           </div>
-        </div>
-      </AnimatedDiv>
+        </AnimatedDiv>
+      </div>
+
+      <TechnologiesSlider />
 
       <div className="section" id="project-section">
         <div className="container">
@@ -191,22 +213,12 @@ export default function Home() {
           </AnimatedDiv>
 
           <AnimatedDiv classname={"project-container"}>
-            <div className="project-img-container relative">
-              <Image
-                className="relative"
-                src={"/images/lossize.png"}
-                width={600}
-                height={800}
-                layout={"responsive"}
-              />
-              <div className="img-overlay"></div>
-            </div>
             <div className="project-card card-right">
               <p className="highlight">Featured Project</p>
               <Link href="https://www.lossize.com">
                 <h3 className="project-title cursor-pointer">Lossize.com</h3>
               </Link>
-              <p className="text-white">
+              <p className="">
                 A web app designed to allow people to simply and easily track
                 their weight loss journey. Set goals, input your weight, and
                 have it graphed out for you to track your daily progress.
@@ -252,22 +264,12 @@ export default function Home() {
           </AnimatedDiv>
 
           <AnimatedDiv classname={"project-container"}>
-            <div className="project-img-container relative">
-              <Image
-                className="relative"
-                src={"/images/lossize.png"}
-                width={600}
-                height={800}
-                layout={"responsive"}
-              />
-              <div className="img-overlay"></div>
-            </div>
             <div className="project-card card-left">
               <p className="highlight">Featured Project</p>
               <Link href="https://www.gkwmedia.com/themelios">
                 <h3 className="project-title cursor-pointer">Themelios</h3>
               </Link>
-              <p className="text-white">
+              <p className="">
                 A platform built for churchs to leverage modern, responsive web
                 design while also hvaing all of their web data sync with a
                 custom mobile app. App features include: adding events to device
@@ -310,24 +312,12 @@ export default function Home() {
           </AnimatedDiv>
 
           <AnimatedDiv classname={"project-container"}>
-            <div className="project-img-container relative">
-              <Image
-                className="relative"
-                src={"/images/lossize.png"}
-                width={600}
-                height={800}
-                layout={"responsive"}
-              />
-              <div className="img-overlay"></div>
-            </div>
             <div className="project-card card-right">
               <p className="highlight">Featured Project</p>
               <Link href="https://www.thomasgusewelle.com">
-                <h3 className="project-title cursor-pointer">
-                  ThomasGusewelle.com
-                </h3>
+                <h3 className="project-title cursor-pointer">This Site!</h3>
               </Link>
-              <p className="text-white">
+              <p className="">
                 A website designed to introduce myself and showcase some of the
                 work I have done.
               </p>
