@@ -196,7 +196,9 @@ export default function Home() {
                 </div>
               </div> */}
               </div>
-              <img src="/images/profile.jpeg" className="profile-img"></img>
+              <div className="profile-img-container">
+                <img src="/images/profile.jpeg" className="profile-img"></img>
+              </div>
             </div>
           </AnimatedDiv>
         </div>
@@ -208,144 +210,149 @@ export default function Home() {
             <AnimatedDiv>
               <h3 className="section-header">Projects</h3>
             </AnimatedDiv>
-
-            <AnimatedDiv classname={"project-container"}>
-              <div className="project-card card-right">
-                <p className="highlight">Featured Project</p>
-                <Link href="https://www.lossize.com">
-                  <h3 className="project-title cursor-pointer">Lossize.com</h3>
-                </Link>
-                <p className="">
-                  A web app designed to allow people to simply and easily track
-                  their weight loss journey. Set goals, input your weight, and
-                  have it graphed out for you to track your daily progress.
-                </p>
-                <div className="tech-container">
-                  <p className="highlight mb-1">Technologies Used</p>
-                  <div className="tech-grid-2">
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>NextJS</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>TailwindCSS</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Supabase</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Vercel</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Framer Motion</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Material UI</p>
+            <div className="project-grid">
+              <AnimatedDiv classname={"project-container"}>
+                <div className="project-card card-right">
+                  <p className="highlight">Featured Project</p>
+                  <Link href="https://www.lossize.com">
+                    <h3 className="project-title cursor-pointer">
+                      Lossize.com
+                    </h3>
+                  </Link>
+                  <p className="">
+                    A web app designed to allow people to simply and easily
+                    track their weight loss journey. Set goals, input your
+                    weight, and have it graphed out for you to track your daily
+                    progress.
+                  </p>
+                  <div className="tech-container">
+                    <p className="highlight mb-1">Technologies Used</p>
+                    <div className="tech-grid-2">
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>NextJS</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>TailwindCSS</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Supabase</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Vercel</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Framer Motion</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Material UI</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="icons-container">
-                  <Link href={"https://github.com/gkwmedia/wieght-tracking"}>
-                    <FaGithub size={iconSize} className="icon" />
-                  </Link>
-                  <Link href={"https://lossize.com"}>
-                    <FaExternalLinkAlt size={iconSize} className="icon" />
-                  </Link>
-                </div>
-              </div>
-            </AnimatedDiv>
-
-            <AnimatedDiv classname={"project-container"}>
-              <div className="project-card card-left">
-                <p className="highlight">Featured Project</p>
-                <Link href="https://www.gkwmedia.com/themelios">
-                  <h3 className="project-title cursor-pointer">Themelios</h3>
-                </Link>
-                <p className="">
-                  A platform built for churchs to leverage modern, responsive
-                  web design while also hvaing all of their web data sync with a
-                  custom mobile app. App features include: adding events to
-                  device calendar, in-app emailing, and a complete bible reader.
-                </p>
-                <div className="tech-container">
-                  <p className="highlight mb-1">Technologies Used</p>
-                  <div className="tech-grid-2">
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Flutter</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Webflow</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>APIs</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Jetboost</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Riverpod</p>
-                    </div>
+                  <div className="icons-container">
+                    <Link href={"https://github.com/gkwmedia/wieght-tracking"}>
+                      <FaGithub size={iconSize} className="icon" />
+                    </Link>
+                    <Link href={"https://lossize.com"}>
+                      <FaExternalLinkAlt size={iconSize} className="icon" />
+                    </Link>
                   </div>
                 </div>
-                <div className="icons-container">
-                  <Link href={"https://github.com/gkwmedia/ThemeliosDemoApp"}>
-                    <FaGithub size={iconSize} className="icon" />
-                  </Link>
-                  <Link href={"https://www.gkwmedia.com/themelios"}>
-                    <FaExternalLinkAlt size={iconSize} className="icon" />
-                  </Link>
-                </div>
-              </div>
-            </AnimatedDiv>
+              </AnimatedDiv>
 
-            <AnimatedDiv classname={"project-container"}>
-              <div className="project-card card-right">
-                <p className="highlight">Featured Project</p>
-                <Link href="https://www.thomasgusewelle.com">
-                  <h3 className="project-title cursor-pointer">This Site!</h3>
-                </Link>
-                <p className="">
-                  A website designed to introduce myself and showcase some of
-                  the work I have done.
-                </p>
-                <div className="tech-container">
-                  <p className="highlight mb-1">Technologies Used</p>
-                  <div className="tech-grid-2">
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>NextJS</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Nodemailer</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Vercel</p>
-                    </div>
-                    <div className="tech-item">
-                      <FiChevronRight className="tech-icon" />
-                      <p>Framer Motion</p>
+              <AnimatedDiv classname={"project-container"}>
+                <div className="project-card card-left">
+                  <p className="highlight">Featured Project</p>
+                  <Link href="https://www.gkwmedia.com/themelios">
+                    <h3 className="project-title cursor-pointer">Themelios</h3>
+                  </Link>
+                  <p className="">
+                    A platform built for churchs to leverage modern, responsive
+                    web design while also hvaing all of their web data sync with
+                    a custom mobile app. App features include: adding events to
+                    device calendar, in-app emailing, and a complete bible
+                    reader.
+                  </p>
+                  <div className="tech-container">
+                    <p className="highlight mb-1">Technologies Used</p>
+                    <div className="tech-grid-2">
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Flutter</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Webflow</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>APIs</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Jetboost</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Riverpod</p>
+                      </div>
                     </div>
                   </div>
+                  <div className="icons-container">
+                    <Link href={"https://github.com/gkwmedia/ThemeliosDemoApp"}>
+                      <FaGithub size={iconSize} className="icon" />
+                    </Link>
+                    <Link href={"https://www.gkwmedia.com/themelios"}>
+                      <FaExternalLinkAlt size={iconSize} className="icon" />
+                    </Link>
+                  </div>
                 </div>
-                <div className="icons-container">
-                  <Link href={"https://github.com/gkwmedia/wieght-tracking"}>
-                    <FaGithub size={iconSize} className="icon" />
+              </AnimatedDiv>
+
+              <AnimatedDiv classname={"project-container"}>
+                <div className="project-card card-right">
+                  <p className="highlight">Featured Project</p>
+                  <Link href="https://www.thomasgusewelle.com">
+                    <h3 className="project-title cursor-pointer">This Site!</h3>
                   </Link>
+                  <p className="">
+                    A website designed to introduce myself and showcase some of
+                    the work I have done.
+                  </p>
+                  <div className="tech-container">
+                    <p className="highlight mb-1">Technologies Used</p>
+                    <div className="tech-grid-2">
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>NextJS</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Nodemailer</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Vercel</p>
+                      </div>
+                      <div className="tech-item">
+                        <FiChevronRight className="tech-icon" />
+                        <p>Framer Motion</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="icons-container">
+                    <Link href={"https://github.com/gkwmedia/wieght-tracking"}>
+                      <FaGithub size={iconSize} className="icon" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </AnimatedDiv>
+              </AnimatedDiv>
+            </div>
           </div>
         </div>
 

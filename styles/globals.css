@@ -219,7 +219,7 @@ button {
 }
 
 .hero-min-height {
-  min-height: 350px;
+  min-height: 450px;
 }
 
 /* Other Classes */
@@ -263,9 +263,11 @@ button {
 }
 
 .nav-left {
+  margin-left: 1rem;
+  color: white;
   width: 2rem;
   height: 2rem;
-  background-color: red;
+  background-color: var(--accentColor);
 }
 
 .nav-right {
@@ -366,10 +368,13 @@ footer {
   position: absolute;
   right: 0;
   top: 0;
+  /* left: 0; */
   transform: rotate(-90deg) translate(0, -100%);
   transform-origin: right 0;
   min-height: 200px;
   z-index: 0;
+  /* width: 100%; */
+  height: 200px;
 }
 
 .svg2 {
@@ -381,12 +386,20 @@ footer {
   transform-origin: right 0;
   /* min-width: 200px; */
   min-height: 200px;
+  height: 200px;
   z-index: 0;
 }
 
+.profile-img-container {
+  border-radius: 100%;
+  width: 300px;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
 .profile-img {
-  max-width: 100px;
-  margin: 1rem 0;
+  max-width: 300px;
+
   border-radius: 0.25rem;
 }
 
@@ -538,7 +551,7 @@ textarea {
 
   .project-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
     gap: 1rem;
     margin: 4rem 0;
   }
@@ -548,7 +561,6 @@ textarea {
   }
 
   .project-card {
-    position: static;
   }
   .img-overlay {
     opacity: 0;
@@ -561,29 +573,10 @@ textarea {
   }
 }
 
-@-webkit-keyframes move {
-  0% {
-    z-index: 1;
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    z-index: -1;
-    opacity: 1;
-  }
-}
-@keyframes move {
-  0% {
-    z-index: 1;
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    z-index: -1;
-    opacity: 1;
-  }
+@media (min-width: 925px) {
+  /* .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  } */
 }

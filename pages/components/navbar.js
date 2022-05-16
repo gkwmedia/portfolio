@@ -11,7 +11,9 @@ const Navbar = () => {
     <nav>
       <div className="navbar">
         <div className="navbar-container">
-          <div className="nav-left"></div>
+          <div className="nav-left">
+            <h1>TG</h1>
+          </div>
           <div
             className={`nav-right ${
               showMobileNav ? "translate-x-0" : "translate-x-full"
