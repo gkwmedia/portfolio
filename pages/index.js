@@ -55,10 +55,7 @@ export default function Home() {
           name="description"
           content="Thomas Gusewelle's Developer Portfolio"
         />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1"
-        />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -66,7 +63,7 @@ export default function Home() {
 
       <div className="hero relative">
         <div className="z-10">
-          <div className="container">
+          <div className="hero-min-height container">
             <div className="z-10">
               <h2 className="hero-introduction">
                 <span>
