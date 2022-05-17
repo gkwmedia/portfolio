@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -6,13 +6,39 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // const controlNav = () => {
+  //   if (typeof window !== "undefined") {
+  //     if (window.scrollY > lastScrollY) {
+  //       setShowNav(false);
+  //     } else {
+  //       setShowNav(true);
+  //     }
+  //     setLastScrollY(window.scrollY);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     window.addEventListener("scroll", controlNav);
+  //     console.log(lastScrollY);
+
+  //     return () => {
+  //       window.removeEventListener("scroll", controlNav);
+  //     };
+  //   }
+  // }, [lastScrollY]);
 
   return (
     <nav>
       <div className="navbar">
         <div className="navbar-container">
           <div className="nav-left">
-            <h1>TG</h1>
+            <a className="nav-icon-link" href="/">
+              <h1>TG</h1>
+            </a>
           </div>
           <div
             className={`nav-right ${

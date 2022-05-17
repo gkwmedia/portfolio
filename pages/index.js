@@ -9,9 +9,9 @@ import { Typewriter, useTypewriter, Cursor } from "react-simple-typewriter";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import { FiChevronRight } from "react-icons/fi";
+import { FiChevronRight, FiMail } from "react-icons/fi";
 import { FaExternalLinkAlt, FaUsersSlash } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import TechnologiesSlider from "./components/technologies";
 
 export default function Home() {
@@ -356,9 +356,15 @@ export default function Home() {
           </div>
         </div>
 
-        <AnimatedDiv classname={"section"} id={"contact-section"}>
-          <div className="container">
-            <h3 className="section-header">Contact Me</h3>
+        <div className={"section"} id={"contact-section"}>
+          <AnimatedDiv classname="container" id={"contact-container"}>
+            <h3 className="section-header" id="contact-header">
+              Contact Me
+            </h3>
+            <p className="contact-text">
+              I am actively searching for a developer role and would love to
+              hear about opening at your company!
+            </p>
             <form className="contact-form" onSubmit={handleSubmitForm}>
               <div className="contact-group" id="name-group">
                 <label className="form-label">Name</label>
@@ -389,10 +395,28 @@ export default function Home() {
                 Submit
               </button>
             </form>
-          </div>
-        </AnimatedDiv>
+          </AnimatedDiv>
+        </div>
 
-        <footer></footer>
+        <footer>
+          <div className="footer-container">
+            <div className="footer-icons">
+              <a href="github.com/gkwmedia">
+                <FaGithub size={iconSize} />
+              </a>
+              <a href="https://www.linkedin.com/in/thomasgusewelle/">
+                <FaLinkedin size={iconSize} />
+              </a>
+              <a href="https://twitter.com/TGusewelle">
+                <FaTwitter size={iconSize} />
+              </a>
+              <a href="mailto:thomasgusewelle21@gmail.com">
+                <FiMail size={iconSize} />
+              </a>
+            </div>
+            <p>Thomas Gusewelle &copy; 2022</p>
+          </div>
+        </footer>
       </div>
     </div>
   );
