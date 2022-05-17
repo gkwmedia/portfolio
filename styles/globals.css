@@ -331,6 +331,11 @@ button {
   background-color: var(--accentColor);
 }
 
+.nav-btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
 footer {
   width: 100%;
 

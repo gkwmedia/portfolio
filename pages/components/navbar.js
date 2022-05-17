@@ -56,6 +56,15 @@ const Navbar = () => {
                   About
                 </a>
               </li>
+              <li>
+                <a
+                  className="nav-item"
+                  href="#technologies-section"
+                  onClick={() => setShowMobileNav(false)}
+                >
+                  Technologies
+                </a>
+              </li>
               <li className="nav-item">
                 <a
                   className="nav-item"
@@ -75,7 +84,11 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <button className="nav-btn">Resume</button>
+                <button className="nav-btn">
+                  <a href="/assets/resume.pdf" target={"_blank"}>
+                    Resume
+                  </a>
+                </button>
               </li>
             </ul>
           </div>
