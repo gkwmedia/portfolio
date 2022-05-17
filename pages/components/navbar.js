@@ -36,9 +36,9 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navbar-container">
           <div className="nav-left">
-            <a className="nav-icon-link" href="/">
+            <Link className="nav-icon-link" href="/">
               <h1>TG</h1>
-            </a>
+            </Link>
           </div>
           <div
             className={`nav-right ${
