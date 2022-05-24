@@ -295,7 +295,7 @@ button {
   width: 100%;
   padding: 1rem;
   background-color: white;
-  /* height: 1000px; */
+  height: 100vh;
   z-index: 1000;
   transition: all 200ms ease-in-out;
 }

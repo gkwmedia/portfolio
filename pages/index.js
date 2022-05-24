@@ -91,7 +91,7 @@ export default function Home() {
                     <span>
                       <Typewriter
                         words={[
-                          "I'm a developer focusing on creating beautiful and engaging experiences on the web and mobile. Currently I'm a Director of Media and looking for a development focused role.",
+                          "I'm a developer focusing on creating beautiful and engaging experiences on the web and mobile.",
                         ]}
                         typeSpeed={20}
                         cursor
@@ -144,12 +144,12 @@ export default function Home() {
             <div className="text-img">
               <div>
                 <p>
-                  Hi! My name is Thomas and I have a passion for creating
-                  beautiful front-ends that engage users in intuative ways. My
-                  passion for technology started when I was a kid and would take
-                  apart old computers with a crazy idea to turn them into a
-                  robot(if only it was that easy) and grew into programming and
-                  tinkering with different linux operating systems.
+                  Hi! I'm Thomas and I have a passion for creating beautiful
+                  front-ends that engage users in intuative ways. My passion for
+                  technology started when I was a kid and would take apart old
+                  computers with a crazy idea to turn them into a robot(if only
+                  it was that easy) and grew into programming and tinkering with
+                  different linux operating systems.
                 </p>
 
                 <br />
@@ -361,10 +361,7 @@ export default function Home() {
             <h3 className="section-header" id="contact-header">
               Contact Me
             </h3>
-            <p className="contact-text">
-              I am actively searching for a developer role and would love to
-              hear about opening at your company!
-            </p>
+
             <form className="contact-form" onSubmit={handleSubmitForm}>
               <div className="contact-group" id="name-group">
                 <label className="form-label">Name</label>
