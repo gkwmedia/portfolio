@@ -144,12 +144,12 @@ export default function Home() {
             <div className="text-img">
               <div>
                 <p>
-                  Hi! I'm Thomas and I have a passion for creating beautiful
-                  front-ends that engage users in intuative ways. My passion for
-                  technology started when I was a kid and would take apart old
-                  computers with a crazy idea to turn them into a robot(if only
-                  it was that easy) and grew into programming and tinkering with
-                  different linux operating systems.
+                  Hi! I&apos;m Thomas and I have a passion for creating
+                  beautiful front-ends that engage users in intuative ways. My
+                  passion for technology started when I was a kid and would take
+                  apart old computers with a crazy idea to turn them into a
+                  robot(if only it was that easy) and grew into programming and
+                  tinkering with different linux operating systems.
                 </p>
 
                 <br />
