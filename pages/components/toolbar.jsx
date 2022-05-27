@@ -1,5 +1,3 @@
-const Toolbar = ({ text }) => {
-	return <div className="tooltop"> {text} </div>;
-};
+const Tooltip = ({ text }) => <div className="tooltip"> {text} </div>;
 
-export default Toolbar;
+export default Tooltip;
