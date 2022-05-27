@@ -241,7 +241,7 @@ export default function Home() {
 											</div>
 											<div className="tech-item">
 												<FiChevronRight className="tech-icon" />
-												<p>Framer Motion</p>
+												<p>Framer</p>
 											</div>
 											<div className="tech-item">
 												<FiChevronRight className="tech-icon" />
@@ -336,7 +336,7 @@ export default function Home() {
 											</div>
 											<div className="tech-item">
 												<FiChevronRight className="tech-icon" />
-												<p>Framer Motion</p>
+												<p>Framer</p>
 											</div>
 										</div>
 									</div>
