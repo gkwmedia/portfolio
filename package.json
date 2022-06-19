@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@lottiefiles/lottie-player": "^1.5.7",
+    "@mui/material": "^5.8.4",
     "express": "^4.18.1",
     "framer-motion": "^6.3.3",
     "googleapis": "^100.0.0",
@@ -19,9 +23,12 @@
     "react-dom": "18.1.0",
     "react-icons": "^4.3.1",
     "react-intersection-observer": "^9.1.0",
-    "react-simple-typewriter": "^3.0.1"
+    "react-simple-typewriter": "^3.0.1",
+    "sass": "^1.52.3"
   },
   "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6"
   }

@@ -5,6 +5,7 @@ import { text } from "express";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
   const oauth2 = google.auth.OAuth2;
 

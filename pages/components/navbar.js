@@ -33,59 +33,54 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="navbar">
-        <div className="navbar-container">
-          <div className="nav-left">
-            <Link className="nav-icon-link" href="/">
-              <h1>TG</h1>
+      <div className='navbar'>
+        <div className='navbar-container'>
+          <div className='nav-left'>
+            <Link className='nav-icon-link' href='/'>
+              <h1> TG </h1>
             </Link>
           </div>
           <div
             className={`nav-right ${
               showMobileNav ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <div className="align-left"></div>
+            }`}>
+            <div className='align-left'> </div>
             <ul>
               <li>
                 <a
-                  className="nav-item"
-                  href="#about-section"
-                  onClick={() => setShowMobileNav(false)}
-                >
+                  className='nav-item'
+                  href='#about-section'
+                  onClick={() => setShowMobileNav(false)}>
                   About
                 </a>
               </li>
               <li>
                 <a
-                  className="nav-item"
-                  href="#technologies-section"
-                  onClick={() => setShowMobileNav(false)}
-                >
+                  className='nav-item'
+                  href='#technologies-section'
+                  onClick={() => setShowMobileNav(false)}>
                   Technologies
                 </a>
               </li>
-              <li className="nav-item">
+              <li className='nav-item'>
                 <a
-                  className="nav-item"
-                  href="#project-section"
-                  onClick={() => setShowMobileNav(false)}
-                >
+                  className='nav-item'
+                  href='#project-section'
+                  onClick={() => setShowMobileNav(false)}>
                   Projects
                 </a>
               </li>
-              <li className="nav-item">
+              <li className='nav-item'>
                 <a
-                  className="nav-item"
-                  href="#contact-section"
-                  onClick={() => setShowMobileNav(false)}
-                >
+                  className='nav-item'
+                  href='#contact-section'
+                  onClick={() => setShowMobileNav(false)}>
                   Contact
                 </a>
               </li>
               <li>
-                <button className="nav-btn">
-                  <a href="/assets/resume.pdf" target={"_blank"}>
+                <button className='nav-btn'>
+                  <a href='/assets/resume.pdf' target={"_blank"}>
                     Resume
                   </a>
                 </button>
@@ -94,13 +89,13 @@ const Navbar = () => {
           </div>
           {showMobileNav ? (
             <AiOutlineClose
-              className="hamburger-icon"
+              className='hamburger-icon'
               size={30}
               onClick={() => setShowMobileNav(false)}
             />
           ) : (
             <GiHamburgerMenu
-              className="hamburger-icon"
+              className='hamburger-icon'
               size={40}
               onClick={() => setShowMobileNav(true)}
             />
