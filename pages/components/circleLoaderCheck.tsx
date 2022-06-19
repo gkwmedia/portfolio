@@ -1,6 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import { motion } from "framer-motion";
-import style from ".././../styles/CircleLoader.module.scss";
+import style from ".././../styles/circleLoader.module.scss";
 
 const CircleLoaderCheck = ({ onClick, isSent }) => {
   return (
