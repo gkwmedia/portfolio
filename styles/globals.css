@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap");
-
 :root {
   --primaryColor: rgb(255, 255, 255);
   --textPrimaryColor: white;
@@ -8,9 +7,7 @@
   --textColor2: rgb(0, 0, 0);
   --textColor2Highlight: rgb(0, 0, 0);
   --textWhite: white;
-
   --bg-color-2: #f2f2f2;
-
   /* 
   --primaryColor: rgb(21, 34, 52);
   --textPrimaryColor: white;
@@ -18,12 +15,12 @@
   --textColor: #575ba9;
   --textColor2: rgb(77, 105, 122);
   --textColor2Highlight: rgb(92, 137, 163); */
-
   font-family: "Source Code Pro", monospace;
   overflow-x: hidden;
 }
 
 /* Box sizing rules */
+
 *,
 *::before,
 *::after {
@@ -31,6 +28,7 @@
 }
 
 /* Remove default margin */
+
 body,
 h1,
 h2,
@@ -45,12 +43,14 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
 ul,
 ol {
   list-style: none;
 }
 
 /* Set core root defaults */
+
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -60,6 +60,7 @@ html {
 }
 
 /* Set core body defaults */
+
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
@@ -69,11 +70,13 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
+
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
+
 img,
 picture {
   max-width: 100%;
@@ -81,6 +84,7 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
+
 input,
 button,
 textarea,
@@ -99,11 +103,11 @@ button {
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
@@ -115,6 +119,7 @@ button {
 }
 
 /* Utility Classes */
+
 .container {
   max-width: 1150px;
   margin-inline: auto;
@@ -127,6 +132,7 @@ button {
 .flex-col {
   flex-direction: column;
 }
+
 .hide {
   display: none !important;
 }
@@ -342,7 +348,6 @@ button {
 
 footer {
   width: 100%;
-
   color: white;
   background: var(--accentColor);
 }
@@ -466,7 +471,6 @@ footer {
 
 .profile-img {
   max-width: 300px;
-
   border-radius: 0.25rem;
 }
 
@@ -645,87 +649,123 @@ textarea {
   }
 
   /* .text-img {
+.icon-tooltip-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -2.25rem;
+    background-color: white;
+    padding: 0.25rem 0.25rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.icon-tooltip-container:hover>.tooltip {
+    opacity: 1;
+}
+
+
+/* For larger then mobile */
+
+  @media (max-width: 320px) {
+    body {
+      font-size: 0.8rem;
+    }
+    .nav-wrapper {
+      overflow: scroll;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .hero-introduction {
+      font-size: 2.5rem;
+    }
+    .name-header {
+      font-size: 3.5rem;
+    }
+    .contact-btn {
+      margin: 1rem 0;
+    }
+    .section-header {
+      font-size: 3rem;
+    }
+    /* .text-img {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
   } */
-
-  /* .profile-img-container {
+    /* .profile-img-container {
     width: 2800px;
   } */
-
-  .technologies-container {
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0.5rem;
+    .technologies-container {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0.5rem;
+    }
+    .project-container {
+      display: grid;
+      /* grid-template-columns: repeat(2, 1fr); */
+      gap: 1rem;
+      margin: 4rem 0;
+    }
+    .project-img-container {
+      overflow: hidden;
+    }
+    .project-card {
+    }
+    .img-overlay {
+      opacity: 0;
+    }
+    .card-left {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+    }
   }
 
-  .project-container {
-    display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
-    gap: 1rem;
-    margin: 4rem 0;
-  }
-
-  .project-img-container {
-    overflow: hidden;
-  }
-
-  .project-card {
-  }
-  .img-overlay {
-    opacity: 0;
-  }
-
-  .card-left {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-  }
-}
-
-@media (min-width: 925px) {
-  .nav-right {
-    position: static;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    background: none;
-    transform: translateX(0);
-    transition: none;
-  }
-
-  .nav-right ul {
-    flex-direction: row;
-  }
-
-  .hamburger-icon {
-    display: none;
-  }
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  #project-section {
-    margin-bottom: 3rem;
-  }
-
-  .project-container:last-child {
-    margin-bottom: 4rem;
-  }
-
-  .text-img {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .profile-img-container {
-    width: 1200px;
-    aspect-ratio: 1/1;
+  @media (min-width: 925px) {
+    .nav-right {
+      position: static;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      background: none;
+      transform: translateX(0);
+      transition: none;
+    }
+    .nav-right ul {
+      flex-direction: row;
+    }
+    .hamburger-icon {
+      display: none;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    #project-section {
+      margin-bottom: 3rem;
+    }
+    .project-container:last-child {
+      margin-bottom: 4rem;
+    }
+    .text-img {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .profile-img-container {
+      width: 1200px;
+      aspect-ratio: 1/1;
+    }
   }
 }
