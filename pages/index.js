@@ -408,7 +408,7 @@ export default function Home() {
                   <div className='contact-group' id='email-group'>
                     <label className={`form-label`}>Email</label>
                     <input
-                      className={isEmailError.error && "form-error"}
+                      className={isEmailError.error ? "form-error" : ""}
                       type='email'
                       id='email'
                       onChange={(e) => setEmail(e.target.value)}></input>
