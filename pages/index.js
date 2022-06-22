@@ -34,9 +34,12 @@ export default function Home() {
     error: false,
     message: "",
   });
+
+  //states for contact form
+  // formHeight is setting the height of the loading element so that it is the same height as the actual form.
   const [formHeight, setFormHeight] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSent, setIsSent] = useState(false);
+  const [isSent, setIsSent] = useState({ state: "loading" });
 
   useEffect(() => {
     if (!isSubmitted) {
@@ -48,23 +51,21 @@ export default function Home() {
     }
   }, [isSubmitted, formHeight]);
 
-  useEffect(() => {
-    console.log(isEmailError);
-  }, [isEmailError]);
-
   const handleSubmitForm = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+
+    setIsSent({ state: "loading" });
 
     let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!email.match(mailFormat)) {
       setIsEmailError({ error: true, message: "Please Enter a Valid Email" });
-      console.log("here");
+      console.log("return");
       return;
     } else {
       setIsEmailError({ state: false });
     }
+    setIsSubmitted(true);
 
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -73,8 +74,12 @@ export default function Home() {
       },
       body: JSON.stringify({ name, email, message }),
     });
+
     if (response.status == 200) {
-      setIsSent(true);
+      setIsSent({ state: "sent" });
+    }
+    if (response.status == 500) {
+      setIsSent({ state: "error" });
     }
   };
 
@@ -435,7 +440,11 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 id='submit-wrapper'>
-                <CircleLoaderCheck onClick={submitNew} isSent={isSent} />
+                <CircleLoaderCheck
+                  resetForm={submitNew}
+                  isSent={isSent}
+                  submitForm={handleSubmitForm}
+                />
               </motion.div>
             )}
           </AnimatedDiv>
