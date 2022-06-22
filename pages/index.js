@@ -428,9 +428,6 @@ export default function Home() {
                     Submit
                   </button>
                 </form>
-                <button onClick={() => setIsSubmitted(true)}>
-                  change state
-                </button>
               </div>
             ) : (
               <motion.div
