@@ -25,6 +25,7 @@ export default async (req, res) => {
     oauth2Client.getAccessToken((err, token) => {
       if (err) {
         reject("failed to create access token");
+        res.status(500);
       }
       resolve(token);
     });
@@ -51,7 +52,11 @@ export default async (req, res) => {
       <p><strong>Email: </strong>${email}</p><br/>
       <p><strong>Message: </strong>${message}</p>`,
     });
-  } catch (error) {}
+  } catch (error) {
+    if (error) {
+      res.status(500);
+    }
+  }
 
   res.status(200).json(req.body);
 };
