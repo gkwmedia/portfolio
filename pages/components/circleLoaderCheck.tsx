@@ -4,17 +4,22 @@ import style from ".././../styles/circleLoader.module.scss";
 
 const CircleLoaderCheck = ({ resetForm, isSent, sendForm }) => {
   console.log(isSent);
-  return (
-    <div>
-      {isSent.state == "loading" && (
+
+  if (isSent == undefined) {
+    return <div></div>;
+  }
+
+  switch (isSent.state) {
+    case "loading":
+      return (
         <div className={style.wrapper}>
           <div className='text-white'>
             <CircularProgress color='inherit' />
           </div>
         </div>
-      )}
-
-      {isSent.state == "error" && (
+      );
+    case "error":
+      return (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -25,9 +30,9 @@ const CircleLoaderCheck = ({ resetForm, isSent, sendForm }) => {
             Try Again
           </button>
         </motion.div>
-      )}
-
-      {isSent.state == "sent" && (
+      );
+    case "sent":
+      return (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -42,9 +47,8 @@ const CircleLoaderCheck = ({ resetForm, isSent, sendForm }) => {
             Submit New
           </button>
         </motion.div>
-      )}
-    </div>
-  );
+      );
+  }
 };
 
 export default CircleLoaderCheck;
