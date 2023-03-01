@@ -1,13 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./components/navbar";
 import AnimatedDiv from "./components/animated_div";
 import { useState, useEffect } from "react";
 
-import { Typewriter, useTypewriter, Cursor } from "react-simple-typewriter";
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 import { FiChevronRight, FiMail } from "react-icons/fi";
 import { FaExternalLinkAlt, FaUsersSlash } from "react-icons/fa";
@@ -178,6 +175,78 @@ export default function Home() {
               <AnimatedDiv classname={"project-container"}>
                 <div className='project-card card-right'>
                   <p className='highlight'>Featured Project</p>
+                  <Link href='https://www.eventlite.org'>
+                    <h3 className='project-title cursor-pointer'>
+                      EventLite.org
+                    </h3>
+                  </Link>
+                  <p className=''>
+                    EventLite is an web app for scheduling and managing
+                    volunteers. EventLite is a full-stack app built on the T3
+                    Stack (NextJS, Tailwind CSS, Prisma, and TRPC). EventLite
+                    also utilizes Supabase for authentication and a Postgres
+                    instance, Sendgrid for emails, and Framer Motion for
+                    animations.
+                  </p>
+                  <div className='tech-container'>
+                    <p className='highlight mb-1'>Technologies Used</p>
+                    <div className='tech-grid-2'>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>NextJS</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>Prisma</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>TRPC</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>Tailwind CSS</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>Sendgrid</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>Supabase</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>Mailing.run</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>Vercel</p>
+                      </div>
+                      <div className='tech-item'>
+                        <FiChevronRight className='tech-icon' />
+                        <p>Framer</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='icons-container'>
+                    <Link
+                      href={
+                        "https://github.com/thomas-gusewelle/eventlite.org"
+                      }>
+                      <FaGithub size={iconSize} className='icon' />
+                    </Link>
+                    <Link href={"https://eventlite.org"}>
+                      <FaExternalLinkAlt size={iconSize} className='icon' />
+                    </Link>
+                  </div>
+                </div>
+              </AnimatedDiv>
+
+              <AnimatedDiv classname={"project-container"}>
+                <div className='project-card card-right'>
+                  <p className='highlight'>Featured Project</p>
+
                   <Link href='https://www.lossize.com'>
                     <h3 className='project-title cursor-pointer'>
                       Lossize.com
@@ -219,10 +288,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className='icons-container'>
-                    <Link href={"https://github.com/gkwmedia/wieght-tracking"}>
+                    <Link
+                      href={
+                        "https://github.com/thomas-gusewelle/wieght-tracking"
+                      }>
                       <FaGithub size={iconSize} className='icon' />
                     </Link>
-                    <Link href={"https://lossize.com"}>
+                    <Link href={"https://www.lossize.com"}>
                       <FaExternalLinkAlt size={iconSize} className='icon' />
                     </Link>
                   </div>
@@ -270,50 +342,14 @@ export default function Home() {
                     </div>
                   </div>
                   <div className='icons-container'>
-                    <Link href={"https://github.com/gkwmedia/ThemeliosDemoApp"}>
+                    <Link
+                      href={
+                        "https://github.com/thomas-gusewelle/ThemeliosDemoApp"
+                      }>
                       <FaGithub size={iconSize} className='icon' />
                     </Link>
                     <Link href={"https://www.gkwmedia.com/themelios"}>
                       <FaExternalLinkAlt size={iconSize} className='icon' />
-                    </Link>
-                  </div>
-                </div>
-              </AnimatedDiv>
-
-              <AnimatedDiv classname={"project-container"}>
-                <div className='project-card card-right'>
-                  <p className='highlight'>Featured Project</p>
-                  <Link href='https://www.thomasgusewelle.com'>
-                    <h3 className='project-title cursor-pointer'>This Site!</h3>
-                  </Link>
-                  <p className=''>
-                    A website designed to introduce myself and showcase some of
-                    the work I have done.
-                  </p>
-                  <div className='tech-container'>
-                    <p className='highlight mb-1'>Technologies Used</p>
-                    <div className='tech-grid-2'>
-                      <div className='tech-item'>
-                        <FiChevronRight className='tech-icon' />
-                        <p>NextJS</p>
-                      </div>
-                      <div className='tech-item'>
-                        <FiChevronRight className='tech-icon' />
-                        <p>Nodemailer</p>
-                      </div>
-                      <div className='tech-item'>
-                        <FiChevronRight className='tech-icon' />
-                        <p>Vercel</p>
-                      </div>
-                      <div className='tech-item'>
-                        <FiChevronRight className='tech-icon' />
-                        <p>Framer</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='icons-container'>
-                    <Link href={"https://github.com/gkwmedia/wieght-tracking"}>
-                      <FaGithub size={iconSize} className='icon' />
                     </Link>
                   </div>
                 </div>

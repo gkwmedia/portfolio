@@ -674,7 +674,7 @@ textarea {
   } */
 
   /* .profile-img-container {
-    width: 2800px;
+    width: 200px;
   } */
 
   .technologies-container {
@@ -748,7 +748,8 @@ textarea {
   }
 
   .profile-img-container {
-    width: 1200px;
+    width: auto;
+    min-width: 300px;
     aspect-ratio: 1/1;
   }
 }
