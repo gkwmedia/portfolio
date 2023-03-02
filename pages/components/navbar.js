@@ -80,7 +80,7 @@ const Navbar = () => {
               </li>
               <li>
                 <button className='nav-btn'>
-                  <a href='/assets/resume.pdf' target={"_blank"}>
+                  <a href='/assets/2023Resume.pdf' target={"_blank"}>
                     Resume
                   </a>
                 </button>
